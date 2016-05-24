@@ -1,0 +1,163 @@
+/jailversion
+
+Shows which version of Jail you are using.
+
+
+/jailcheck (player name)
+
+Check the status of the specified prisoner. If you type it without argument, it will display all jailed prisoners.
+
+
+/jailclear
+
+Release all prisoners from every jail on the server. Use with caution.
+
+
+/jailclearforce
+
+Delete all prisoners from database, which means that they will not be jailed anymore, but they will also not be teleported out. Use with caution.
+
+
+/jail [player name] (time) m j:(Jail name) c:(Cell name) r:"(Reason)"
+
+You can left out any parameters except name you want and you can put them in any order you want (so /jail matejdro r:"just for fun" j:eviljail is still valid).
+
+Time means for how long will prisoner be jailed. Enter it in minutes, leave it out or enter -1 to jail him forever (or until you manually release him).
+
+Jail name and cell name are names of the jail and cell prisoner will be jailed in. If you left it out, nearest jail and random cell will be used automatically.
+
+Reason is reason for jailing. It will say it in /jailstatus and on cell sign. If your reason is more than one word, you must use brackets (for example r:"some very long reason"), otherwise you don't have to (for example r:griefer).
+
+If you add m parameter, prisoner will be muted instantly after being jailed.
+
+
+/jailcreatecells [jail name]
+
+Start process of creating cells for specified jail
+
+
+/jailcreate [jail name]
+
+Start process of creating new jail with specified name.
+
+
+/jailcreatewe [jail name]
+
+Same as /jailcreate, except that it will automatically pick cuboid selected by WorldEdit, so you can use advanced selection features of WorldEdit, to select jail cuboid.
+
+
+/jaildeletecell [jail name] (cell name)
+
+Delete specified cell. If you don't specify name, it will delete nearest cell to you, so you can stand in cell to delete it.
+
+
+/jaildeletecells [jail name]
+
+Delete all cells from specified jail
+
+
+/jaildelete [jail name]
+
+Delete specified jail
+
+
+/jailreload
+
+Reload jail config and database data.
+
+
+/jaillistcells [jail name]
+
+List all named cells from specified jail.
+
+
+/jaillist
+
+List all created jails
+
+
+/jailmute [prisoner name]
+
+Toggle mute of specified prisoner (he cannot speak when he is muted)
+
+
+/jailpay (amount) (prisoner name)
+
+See JailPay (paying money to get out of jail).
+
+
+/jailset [player/jail name/jail name:cell name] [property name] (property value)
+
+This setting allows you to modify already made jails and prisoners. For some options you will need to enter value and for some options you will need to enter point.
+
+Prisoner options:
+•time - change prisoner's time. 
+•reason - change prisoner's reason. 
+
+For example: /jailset matejdro time 1 will change time of prisoner named matejdro to 1 minute
+
+Jail options:
+•telepoint - change teleport point of the jail. 
+•releasepoint - change release teleport point of the jail. 
+•corner1 - change first corner of the jail cuboid 
+•corner2 - change second corner of the jail cuboid 
+•worldedit - set jail cuboid to current worldedit selected region 
+•manualjail - toggle manual status of the jail. Manual jails will not be picked up automatically. You can also edit manual jails in config. 
+
+Cell options:
+•celltele - change teleport point of the cell 
+•chest - change chest of the cell 
+•addsign - add sign to the cell 
+•removesign - remove sign from cell 
+•clearsigns - remove all signs from cell 
+•manualcell - toggle manual status of the cell. Manual cells will not be picked up automatically. You can also edit manual cells in config. 
+
+For example: /jailset jail corner1 will change first corner of jail named jail1 to block that you will right click. <</code>>
+
+
+/jailstatus
+
+Jail status will show status about your sentence.
+
+
+/jailstick
+
+Toggle status of the JailStick feature
+
+
+/jailstop
+
+Jail stop will abort any creation process (jail creation or cell creation).
+
+
+/jailtelein [jail name]
+
+This command will teleport you to teleport point of the specified jail
+
+
+/jailteleout [jail name]
+
+
+
+
+/unjail [prisoner name]
+
+This command will release specified prisoner.
+
+
+/unjailforce [prisoner name]
+
+This command will delete prisoner from the database. He will not be treated as jailed (no protections will trigger), but he will not be teleported out, so he may be still stuck inside jail if there is no exit. You can also use it to remove misspelled names.
+
+
+/jailrecord [player name] (list)
+
+This command will allow you to see if the player specified has ever been jailed before. Just "/jailrecord [player name]" will show you the number of times the specific player has been jailed. Adding "list" after the players will list out all of the times the specific player has been jailed, including the server date and time they were jailed on, who the jailer was, how long their sentence was for, and the reason they were jailed if specified.
+
+
+/handcuff [player name]
+
+This command allows you to handcuff a player, meaning they are unable to move, chat (except /reply), place, or destroy blocks, until you un-handcuff them. Use this as the police do, to allow you to freeze a player until you can assess the situation. Get everything straight and know what rules they have broken and how badly, then Jail them.
+
+
+/unhandcuff [player name]
